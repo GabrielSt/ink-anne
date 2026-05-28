@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import logo from "../../assets/logo3.PNG";
+import logo from "../../assets/logo4.PNG";
 
 export default function Header() {
   const [visible, setVisible] = useState(true);
@@ -29,7 +29,7 @@ export default function Header() {
         visible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0",
         atTop
           ? "py-4 bg-transparent border-transparent"
-          : "h-20 bg-void/80 backdrop-blur-md border-b border-border-subtle",
+          : "py-3 bg-void/92 backdrop-blur-md border-b border-border",
       ].join(" ")}
     >
       <div className="relative flex items-center justify-center h-full px-6 max-w-360 mx-auto">

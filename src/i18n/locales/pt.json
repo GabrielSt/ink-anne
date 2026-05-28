@@ -1,11 +1,19 @@
 {
-  "home": {
-    "title": "Ink Anne"
-  },
+  "home": { "title": "Ink Anne" },
   "hero": {
     "eyebrow": "Artista de Tatuagem · Porto, Portugal",
     "name": "Anne Nogueira",
     "description": "Tatuagens anime, cor ilustrativa & fine line.\nNo SALL Studio, Porto.",
     "scroll": "Rolar"
+  },
+  "about": {
+    "eyebrow": "Sobre Mim",
+    "title": "A N N E",
+    "bio1": "Olá, sou a Anne! Especializo-me em tatuagens coloridas — especialmente anime, ilustrações originais e cartoons — mas também adoro um bom blackwork.",
+    "bio2": "Estes estilos captivam-me não só porque me identifico pessoalmente com eles, mas também porque carregam histórias, memórias emocionais e referências visuais ricas em sentimento e identidade.",
+    "bio3": "Tenho uma paixão profunda pela tatuagem. Acredito que tornar algo permanente na pele é uma forma profunda de nos expressarmos, de celebrarmos quem somos e de abraçarmos os nossos corpos — esta casa que fica connosco para sempre. Vejo a tatuagem como um poderoso ponto de encontro entre a arte e a autoestima, entre o traço e a nossa verdadeira identidade.",
+    "bio4": "Cada projeto que crio é feito com amor e atenção cuidadosa ao detalhe. Tudo é desenhado especialmente para ti 🤍",
+    "instagram": "Ver mais no Instagram",
+    "handle": "@ink.anne"
   }
 }
