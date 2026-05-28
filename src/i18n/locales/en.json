@@ -1,5 +1,11 @@
 {
   "home": {
     "title": "Ink Anne"
+  },
+  "hero": {
+    "eyebrow": "Tattoo Artist · Porto, Portugal",
+    "name": "Anne Nogueira",
+    "description": "Anime, illustrative colour & fine line tattoos.\nAt SALL Studio, Porto.",
+    "scroll": "Scroll"
   }
 }

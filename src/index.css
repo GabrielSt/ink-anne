@@ -1,1 +1,86 @@
 @import "tailwindcss";
+
+@theme {
+  /* Backgrounds */
+  --color-void: #080a09;
+  --color-abyss: #0d0f0e;
+  --color-shadow-surface: #141815;
+  --color-surface: #1c211d;
+  --color-border: #252c26;
+  --color-border-subtle: #1e2420;
+
+  /* Green spectrum */
+  --color-venom: #1a3828;
+  --color-moss: #2d5a3d;
+  --color-fern: #3d7a52;
+  --color-phosphor: #4e9e68;
+  --color-glow: #6dbf88;
+  --color-mist: #a8d5b5;
+
+  /* Text */
+  --color-ink-primary: #e8ede9;
+  --color-ink-secondary: #9aa89b;
+  --color-ink-tertiary: #5c6b5e;
+  --color-ink-accent: #6dbf88;
+
+  /* Fonts */
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-label: "Space Grotesk", system-ui, sans-serif;
+}
+
+/* ── Base reset ─────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #080a09;
+  color: #e8ede9;
+  font-family: "Inter", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ── Grain overlay ──────────────────────────── */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.035;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+}
+
+/* ── Scroll arrow animation ─────────────────── */
+@keyframes scroll-bounce {
+  0%,
+  100% {
+    transform: translateY(0) translateX(-50%);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(8px) translateX(-50%);
+    opacity: 1;
+  }
+}
+
+/* ── Reduced motion ─────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
