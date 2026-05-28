@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import logo from "../../assets/logo4.PNG";
+import logo from "../../assets/logo4.png";
 
 export default function Header() {
   const [visible, setVisible] = useState(true);
