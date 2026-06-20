@@ -6,8 +6,8 @@ import {
   pokemonTakenCount,
   pokemonAvailableCount,
   pokemonDesigns,
-  typeColor,
 } from "../../data/pokemonDesigns";
+import PokemonCard from "../ui/PokemonCard";
 import bgPokemon from "../../assets/bg-pokemon.jpg";
 import pokedexImg from "../../assets/pokedex.png";
 
@@ -55,18 +55,18 @@ export default function PokedexTeaserSection() {
 
       <div className="w-full h-px" style={{ backgroundColor: "rgba(185,28,28,0.3)" }} />
 
-      {/* ── Pokédex device image — top left ── */}
+      {/* ── Pokédex device image — top right ── */}
       <img
         src={pokedexImg}
         alt="Pokédex"
-        className="absolute top-8 left-8 lg:top-14 lg:left-14 pointer-events-none select-none"
+        className="absolute top-8 right-8 lg:top-14 lg:right-14 pointer-events-none select-none"
         style={{
           height: "clamp(80px, 12vw, 160px)",
           width: "auto",
           objectFit: "contain",
           opacity: 0.55,
           filter: "drop-shadow(0 0 20px rgba(185,28,28,0.4))",
-          transform: "rotate(-6deg)",
+          transform: "rotate(6deg)",
         }}
         aria-hidden
       />
@@ -81,10 +81,37 @@ export default function PokedexTeaserSection() {
         >
           {/* ── Editorial asymmetric header ── */}
           <div className="flex flex-col lg:flex-row items-start gap-10 lg:gap-20 mb-16">
-            {/* Left: huge display title — offset right to clear Pokédex image on large screens */}
+            {/* Left: huge display title */}
             <div className="lg:w-1/2 lg:pl-4">
+              <h2
+                className="leading-[0.9] text-white block"
+                style={{
+                  fontSize: "clamp(2.5rem, 7vw, 5rem)",
+                  fontFamily: '"Pocket Monk", "Luckiest Guy", cursive',
+                  textShadow: "0 2px 40px rgba(0,0,0,0.5)",
+                  letterSpacing: "0.04em",
+                }}
+              >
+                Pokédex
+              </h2>
+              <h2
+                className="leading-[0.9] text-white block"
+                style={{
+                  fontSize: "clamp(2.5rem, 7vw, 5rem)",
+                  fontFamily: '"Pocket Monk", "Luckiest Guy", cursive',
+                  marginTop: "0.08em",
+                  textShadow: "0 2px 30px rgba(0,0,0,0.6)",
+                  letterSpacing: "0.04em",
+                }}
+              >
+                Tattoo
+              </h2>
+            </div>
+
+            {/* Right: badge + stats + desc + CTA */}
+            <div className="lg:w-1/2 lg:pt-12 flex flex-col justify-center">
               <div
-                className="inline-flex items-center gap-2 mb-6 border px-3 py-1.5"
+                className="inline-flex items-center gap-2 mb-6 border px-3 py-1.5 self-start"
                 style={{ borderColor: "rgba(185,28,28,0.5)", backgroundColor: "rgba(185,28,28,0.12)" }}
               >
                 <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#dc2626" }} />
@@ -99,23 +126,6 @@ export default function PokedexTeaserSection() {
                   {t("pokedexTeaser.eyebrow")}
                 </span>
               </div>
-
-              <h2
-                className="font-display font-black leading-[0.9] block"
-                style={{ fontSize: "clamp(4rem, 12vw, 9rem)", color: "#cc2626", textShadow: "0 2px 40px rgba(185,28,28,0.4)" }}
-              >
-                Pokédex
-              </h2>
-              <h2
-                className="font-display font-black leading-[0.9] text-white block"
-                style={{ fontSize: "clamp(4rem, 12vw, 9rem)", marginTop: "-0.04em", textShadow: "0 2px 30px rgba(0,0,0,0.6)" }}
-              >
-                Tattoo
-              </h2>
-            </div>
-
-            {/* Right: stats + desc + CTA */}
-            <div className="lg:w-1/2 lg:pt-12 flex flex-col justify-center">
               <p
                 className="font-label font-medium text-base mb-5"
                 style={{ color: "#facc15", letterSpacing: "0.2em" }}
@@ -143,74 +153,16 @@ export default function PokedexTeaserSection() {
             </div>
           </div>
 
-          {/* ── Type-colored preview grid ── */}
-          <div
-            className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-px"
-            style={{ backgroundColor: "rgba(185,28,28,0.15)", backdropFilter: "blur(1px)" }}
-          >
-            {previewPokemon.map((pk, i) => {
-              const isAvailable = pk.status === "available";
-              const colors = typeColor[pk.primaryType];
-
-              return (
-                <div
-                  key={pk.id}
-                  className="p-5 flex flex-col items-center gap-3 transition-all duration-200"
-                  style={{
-                    backgroundColor: isAvailable
-                      ? `rgba(8,10,9,0.72)`
-                      : "rgba(8,10,9,0.85)",
-                    borderBottom: `1px solid ${isAvailable ? colors.border : "rgba(37,44,38,0.4)"}`,
-                    boxShadow: isAvailable ? `inset 0 0 0 1px ${colors.border}` : "none",
-                    backdropFilter: "blur(8px)",
-                    transitionDelay: inView ? `${i * 55}ms` : "0ms",
-                  }}
-                >
-                  <span className="font-label text-[10px] tracking-[0.2em]" style={{ color: colors.text, opacity: 0.8 }}>
-                    #{String(pk.number).padStart(3, "0")}
-                  </span>
-
-                  <div className="w-24 h-24 flex items-center justify-center">
-                    {pk.image ? (
-                      <img
-                        src={pk.image}
-                        alt={`${pk.name} tattoo by Anne Nogueira Porto`}
-                        className={!isAvailable ? "grayscale opacity-40" : ""}
-                        loading="lazy"
-                        crossOrigin="anonymous"
-                      />
-                    ) : (
-                      <span
-                        className="font-label text-3xl select-none"
-                        style={{ color: isAvailable ? colors.text : "#252c26", opacity: isAvailable ? 0.55 : 0.35 }}
-                        aria-hidden
-                      >
-                        ?
-                      </span>
-                    )}
-                  </div>
-
-                  <span
-                    className="font-label text-xs font-medium text-center"
-                    style={{ color: isAvailable ? "#e8ede9" : "#5c6b5e" }}
-                  >
-                    {pk.name}
-                  </span>
-
-                  <span
-                    className="font-label text-[9px] tracking-[0.12em] uppercase px-2 py-0.5 text-center w-full"
-                    style={{
-                      color: isAvailable ? colors.text : "#5c6b5e",
-                      borderColor: isAvailable ? colors.border : "rgba(37,44,38,0.5)",
-                      borderWidth: 1,
-                      borderStyle: "solid",
-                    }}
-                  >
-                    {isAvailable ? "Disponível" : "Feito"}
-                  </span>
-                </div>
-              );
-            })}
+          {/* ── Preview grid — shared PokemonCard component ── */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-px bg-border">
+            {previewPokemon.map((pk, i) => (
+              <PokemonCard
+                key={pk.id}
+                pokemon={pk}
+                variant="teaser"
+                animationDelay={inView ? `${i * 55}ms` : "0ms"}
+              />
+            ))}
           </div>
         </div>
       </div>
