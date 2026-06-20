@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import annePhoto from "../../assets/ink.anne.png";
+import annePhoto from "../../assets/ink.anne3.jpg";
 
 const INSTAGRAM_URL = "https://www.instagram.com/ink.anne";
 
@@ -8,15 +8,6 @@ export default function AboutSection() {
 
   return (
     <section className="relative bg-abyss overflow-hidden">
-      {/* ── Ghost "ANNE" watermark ──────────────────────────────────── */}
-      <span
-        aria-hidden
-        className="absolute inset-0 flex items-center justify-center font-display font-black select-none pointer-events-none leading-none text-white/2.5 whitespace-nowrap"
-        style={{ fontSize: "clamp(8rem, 28vw, 22rem)" }}
-      >
-        ANNE
-      </span>
-
       {/* ── Top border rule ─────────────────────────────────────────── */}
       <div className="w-full h-px bg-border" />
 
@@ -27,58 +18,25 @@ export default function AboutSection() {
         </p>
 
         {/* ── Two-column grid ─────────────────────────────────────────── */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-stretch">
           {/* ── Photo column ──────────────────────────────────────────── */}
-          <div className="flex justify-center lg:justify-end order-2 lg:order-1">
-            <div
-              className="relative w-72 sm:w-80 lg:w-full max-w-sm"
-              style={{ aspectRatio: "3 / 4" }}
-            >
-              {/*
-               * Photo with white-background treatment:
-               * ① The image is displayed normally with object-contain.
-               * ② A radial vignette overlay (dark at edges, transparent
-               *   in the centre) covers the white background around the
-               *   subject while keeping the person fully visible.
-               * ③ A subtle green accent line runs along the left edge
-               *   as a brand accent.
-               *
-               * To activate: uncomment the <img> and remove the placeholder.
-               */}
-
-              {/* ── Placeholder (remove once anne.jpg is added) ──────── */}
-
-              {/* ── Photo ────────────────────────────────────────────── */}
-              <img
-                src={annePhoto}
-                alt="Anne Nogueira — Tattoo Artist"
-                className="w-full h-full object-contain"
-                style={{ filter: "contrast(1.06) brightness(0.97)" }}
-              />
-
-              {/* ── Radial vignette — erases white edges ─────────────── */}
-              <div
-                aria-hidden
-                className="absolute inset-0 pointer-events-none"
-                style={{
-                  background:
-                    "radial-gradient(ellipse 68% 72% at 50% 42%, transparent 32%, rgba(13,15,14,0.55) 56%, rgba(13,15,14,0.97) 76%)",
-                }}
-              />
-
-              {/* ── Green left accent line ────────────────────────────── */}
-              <div className="absolute left-0 top-1/4 bottom-1/4 w-px bg-linear-to-b from-transparent via-phosphor to-transparent" />
-            </div>
+          <div className="order-2 lg:order-1 min-h-[500px] lg:min-h-0">
+            <img
+              src={annePhoto}
+              alt="Anne Nogueira — Tattoo Artist at SALL Studio Porto"
+              className="w-full h-full object-cover object-center"
+              style={{ maxHeight: "680px" }}
+            />
           </div>
 
           {/* ── Text column ───────────────────────────────────────────── */}
-          <div className="order-1 lg:order-2">
-            {/* "A N N E" spaced display title */}
+          <div className="order-1 lg:order-2 flex flex-col justify-center">
+            {/* Name display title */}
             <h2
-              className="font-display font-black text-white leading-none mb-10 whitespace-nowrap"
+              className="font-display font-black text-white leading-none mb-10"
               style={{
                 fontSize: "clamp(2rem, 5vw, 6.5rem)",
-                letterSpacing: "0.35em",
+                letterSpacing: "0.12em",
               }}
             >
               {t("about.title")}
