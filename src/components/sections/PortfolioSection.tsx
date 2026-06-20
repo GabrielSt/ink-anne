@@ -110,21 +110,21 @@ export default function PortfolioSection() {
               ? displayImages.map((img, i) => (
                   <a
                     key={img.id}
-                    href={INSTAGRAM_URL}
+                    href={img.postUrl ?? INSTAGRAM_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="relative aspect-square overflow-hidden group bg-shadow-surface block"
+                    className="relative aspect-square overflow-hidden group block"
                     style={{ transitionDelay: `${i * 55}ms` }}
                   >
                     <img
                       src={img.src}
                       alt={img.alt}
                       loading="lazy"
-                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
+                      className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-void/0 group-hover:bg-void/30 transition-colors duration-300" />
-                    <span className="absolute bottom-3 left-3 font-label text-[10px] tracking-widest uppercase text-white/0 group-hover:text-white/80 transition-colors duration-300">
-                      {img.style}
+                    <span className="absolute bottom-0 left-0 right-0 px-3 py-2 font-label text-[10px] tracking-widest uppercase text-white/80 bg-void/60 sm:bg-transparent sm:text-white/0 sm:group-hover:text-white/80 sm:group-hover:bg-transparent transition-colors duration-300">
+                      {img.label}
                     </span>
                   </a>
                 ))
