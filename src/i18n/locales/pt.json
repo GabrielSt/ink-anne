@@ -1,5 +1,13 @@
 {
   "home": { "title": "Ink Anne" },
+  "nav": {
+    "flash": "Flash",
+    "pokedex": "Pokédex",
+    "wishlist": "Wishlist",
+    "gift": "Prenda",
+    "book": "Marcar Sessão",
+    "close": "Fechar menu"
+  },
   "hero": {
     "eyebrow": "Artista de Tatuagem · Porto, Portugal",
     "name": "Anne Nogueira",
@@ -15,5 +23,183 @@
     "bio4": "Cada projeto que crio é feito com amor e atenção cuidadosa ao detalhe. Tudo é desenhado especialmente para ti 🤍",
     "instagram": "Ver mais no Instagram",
     "handle": "@ink.anne"
+  },
+  "styles": {
+    "eyebrow": "Especialidades",
+    "title": "O Estilo",
+    "anime": { "label": "Anime & Ilustrativo", "desc": "Personagens e universos que marcam a tua história" },
+    "color": { "label": "Cor & Realismo", "desc": "Paletas vivas com profundidade e detalhe" },
+    "fineline": { "label": "Fine Line", "desc": "Traços delicados que duram uma vida inteira" },
+    "blackwork": { "label": "Blackwork", "desc": "Contraste, forma e impacto. Sem compromissos" },
+    "minimalist": { "label": "Minimalista", "desc": "Menos é mais — quando cada linha conta" },
+    "floral": { "label": "Floral", "desc": "Natureza transformada em arte permanente" }
+  },
+  "portfolio": {
+    "eyebrow": "Portfólio",
+    "title": "O Trabalho",
+    "follow": "Seguir @ink.anne",
+    "viewAll": "Ver todo o trabalho",
+    "empty": "Fotos em breve — segue no Instagram para ver o trabalho completo."
+  },
+  "flashTeaser": {
+    "eyebrow": "Flash Disponível",
+    "title": "Designs Prontos a Tatuar",
+    "desc": "Peças únicas criadas por mim, disponíveis para reserva imediata a preço especial. Cada design é tatuado apenas uma vez.",
+    "cta": "Ver todos os flashes",
+    "available": "Disponível",
+    "taken": "Reservado"
+  },
+  "pokedexTeaser": {
+    "eyebrow": "Evento Especial",
+    "title": "Pokédex Tattoo",
+    "desc": "Estou a tatuar todos os Pokémon — um por um. Escolhe o teu e reclama-o antes que outra pessoa o faça.",
+    "counter": "{{done}} tatuados · {{available}} disponíveis",
+    "cta": "Abrir Pokédex"
+  },
+  "wishlistTeaser": {
+    "eyebrow": "Wishlist",
+    "title": "Peças que Quero Criar",
+    "desc": "Estas são as personagens e estilos que estou a morrer por tatuar. Reclama uma com preço especial.",
+    "cta": "Ver Wishlist",
+    "wishlistPrice": "Preço Wishlist"
+  },
+  "testimonials": {
+    "eyebrow": "Testemunhos",
+    "title": "O Que Dizem"
+  },
+  "studio": {
+    "eyebrow": "Estúdio",
+    "title": "SALL Studio",
+    "location": "Porto, Portugal",
+    "desc": "Trabalho no SALL Studio, um espaço cuidado no coração do Porto, desenhado para uma experiência confortável, segura e inteiramente dedicada a ti."
+  },
+  "booking": {
+    "eyebrow": "Próximo Passo",
+    "title": "Pronta para a tua sessão?",
+    "desc": "Conta-me a tua ideia. Respondo a todas as mensagens pessoalmente.",
+    "cta": "Iniciar Consulta",
+    "giftCta": "Oferecer uma Tatuagem"
+  },
+  "footer": {
+    "rights": "Todos os direitos reservados",
+    "studioLine": "SALL Studio · Porto, Portugal",
+    "tagline": "Arte permanente, feita com amor."
+  },
+  "flash": {
+    "pageTitle": "Flash — Anne Nogueira · Tattoo Artist Porto",
+    "eyebrow": "Flash Disponível",
+    "headline": "Designs Prontos a Tatuar",
+    "desc": "Peças únicas criadas por mim. Cada design é tatuado apenas uma vez — escolhe o teu.",
+    "filterAll": "Todos",
+    "filterAvailable": "Disponível",
+    "filterTaken": "Reservado",
+    "available": "Disponível",
+    "taken": "Reservado",
+    "book": "Reservar",
+    "styleLabels": {
+      "anime": "Anime",
+      "color": "Cor",
+      "fineline": "Fine Line",
+      "blackwork": "Blackwork",
+      "minimalist": "Minimalista",
+      "floral": "Floral"
+    },
+    "modal": {
+      "title": "Reservar Flash",
+      "piece": "Peça",
+      "name": "O teu nome",
+      "email": "O teu email",
+      "date": "Data preferida (opcional)",
+      "submit": "Enviar pedido",
+      "submitting": "A enviar...",
+      "success": "Pedido enviado! Entro em contacto em breve.",
+      "error": "Ocorreu um erro. Tenta novamente.",
+      "note": "Sem compromisso — responderei pessoalmente."
+    }
+  },
+  "pokedex": {
+    "pageTitle": "Pokédex Tattoo — Anne Nogueira · Porto",
+    "eyebrow": "Evento Especial",
+    "headline": "Pokédex Tattoo",
+    "desc": "Estou a tatuar todos os Pokémon — um por um. Escolhe o teu favorito e reclama-o antes que alguém o faça.",
+    "counter": "{{done}} tatuados · {{available}} disponíveis",
+    "filterAll": "Todos",
+    "filterAvailable": "Disponível",
+    "filterTaken": "Feito",
+    "filterGen1": "Gen I",
+    "filterGen2": "Gen II",
+    "available": "Disponível",
+    "taken": "Feito",
+    "claim": "Reclamar",
+    "modal": {
+      "title": "Reclamar Pokémon",
+      "pokemon": "Pokémon",
+      "name": "O teu nome",
+      "email": "O teu email",
+      "date": "Data preferida (opcional)",
+      "submit": "Enviar pedido",
+      "submitting": "A enviar...",
+      "success": "Pedido enviado! Entro em contacto em breve.",
+      "error": "Ocorreu um erro. Tenta novamente.",
+      "note": "Sem compromisso — responderei pessoalmente."
+    }
+  },
+  "wishlist": {
+    "pageTitle": "Wishlist — Anne Nogueira · Tattoo Artist Porto",
+    "eyebrow": "Wishlist",
+    "headline": "Peças que Quero Criar",
+    "intro": "Há personagens e estilos que estou simplesmente a morrer por tatuar. Se algum destes te falar ao coração, este é o teu sinal — com preço especial incluído.",
+    "wishlistPrice": "Preço Wishlist",
+    "originalPrice": "Preço normal",
+    "cta": "Quero Este",
+    "style": "Estilo"
+  },
+  "gift": {
+    "pageTitle": "Gift Card — Anne Nogueira · Tattoo Artist Porto",
+    "eyebrow": "Gift Card",
+    "headline": "Oferecer Arte Permanente",
+    "desc": "Uma tatuagem é o presente mais pessoal que podes dar — e o mais duradouro.",
+    "howTitle": "Como Funciona",
+    "step1": "Escolhe o valor",
+    "step2": "Personaliza a mensagem",
+    "step3": "Enviamos por email",
+    "customAmount": "Valor personalizado",
+    "form": {
+      "amount": "Valor",
+      "gifterName": "O teu nome",
+      "recipientName": "Nome do destinatário",
+      "message": "Mensagem pessoal (opcional)",
+      "email": "Email para envio",
+      "submit": "Enviar Gift Card",
+      "submitting": "A enviar...",
+      "success": "Gift card enviado com sucesso! Obrigada.",
+      "error": "Ocorreu um erro. Tenta novamente.",
+      "note": "Válido 12 meses · Não reembolsável · Resgatável contactando o estúdio"
+    }
+  },
+  "book": {
+    "pageTitle": "Marcar Sessão — Anne Nogueira · Tattoo Artist Porto",
+    "eyebrow": "Consulta",
+    "headline": "Vamos Criar Algo Juntas",
+    "desc": "Preenche o formulário abaixo. Leio tudo pessoalmente e respondo em 2–3 dias úteis.",
+    "form": {
+      "name": "Nome",
+      "email": "Email",
+      "style": "Estilo preferido",
+      "stylePlaceholder": "Ex: Anime, Fine Line, Blackwork...",
+      "size": "Tamanho aproximado",
+      "sizePlaceholder": "Ex: 5×5cm, metade do braço...",
+      "placement": "Localização no corpo",
+      "placementPlaceholder": "Ex: Antebraço, ombro, tornozelo...",
+      "budget": "Orçamento estimado",
+      "budgetPlaceholder": "Ex: €150–200",
+      "references": "Descrição e referências",
+      "referencesPlaceholder": "Descreve a tua ideia, personagem, estilo, atmosfera...",
+      "submit": "Enviar pedido",
+      "submitting": "A enviar...",
+      "success": "Recebido! Responderei em 2–3 dias úteis.",
+      "error": "Ocorreu um erro. Tenta novamente.",
+      "note": "Todas as mensagens são respondidas pessoalmente."
+    }
   }
 }
