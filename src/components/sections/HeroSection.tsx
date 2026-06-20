@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { ChevronDown } from "lucide-react";
 import heroVideo from "../../assets/hero-video.mov";
@@ -6,6 +6,13 @@ import heroVideo from "../../assets/hero-video.mov";
 export default function HeroSection() {
   const { t } = useTranslation();
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleScrollDown = () => {
     window.scrollTo({ top: window.innerHeight, behavior: "smooth" });
@@ -13,12 +20,7 @@ export default function HeroSection() {
 
   return (
     <section className="relative w-full h-svh overflow-hidden bg-void">
-      {/* ── Full-screen B&W video ─────────────────────────────────────────
-       * object-cover zooms + crops the portrait video to fill the entire
-       * viewport — no pillarboxing, no letter-boxing, cinematic on all
-       * screen sizes. grayscale + slight contrast lift matches the
-       * Bang Bang Forever editorial reference.
-       */}
+      {/* ── Full-screen B&W video ── */}
       <video
         ref={videoRef}
         autoPlay
@@ -29,17 +31,11 @@ export default function HeroSection() {
         className="absolute inset-0 w-full h-full object-cover"
         style={{ filter: "grayscale(100%) contrast(1.08)" }}
       >
-        {/* .mov plays natively in Safari. Chrome/Firefox handle H.264
-            inside .mov fine in most cases. Convert to .mp4 for prod. */}
         <source src={heroVideo} type="video/mp4" />
         <source src={heroVideo} type="video/quicktime" />
       </video>
 
-      {/* ── Dark blue-tinted overlay ──────────────────────────────────────
-       * A deep navy-to-void gradient sits over the B&W video.
-       * The blue tint is subtle — it reads as "cinematic dark" not "blue".
-       * It's heavy enough to make white text pop at any screen brightness.
-       */}
+      {/* ── Gradient overlay ── */}
       <div
         aria-hidden
         className="absolute inset-0"
@@ -51,8 +47,11 @@ export default function HeroSection() {
         }}
       />
 
-      {/* ── Text content ─────────────────────────────────────────────────── */}
-      <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center px-6 pointer-events-none select-none">
+      {/* ── Text content — parallax offset ── */}
+      <div
+        className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center px-6 pointer-events-none select-none"
+        style={{ transform: `translateY(${scrollY * 0.28}px)` }}
+      >
         {/* Eyebrow */}
         <p
           className="font-label font-medium text-xs tracking-[0.22em] uppercase text-phosphor mb-6 opacity-0"
@@ -87,7 +86,7 @@ export default function HeroSection() {
         </p>
       </div>
 
-      {/* ── Scroll arrow ─────────────────────────────────────────────────── */}
+      {/* ── Scroll indicator ── */}
       <button
         onClick={handleScrollDown}
         aria-label={t("hero.scroll")}
@@ -100,14 +99,9 @@ export default function HeroSection() {
         <span className="font-label font-medium text-[10px] tracking-[0.2em] uppercase text-white/40 group-hover:text-phosphor transition-colors duration-300">
           {t("hero.scroll")}
         </span>
-        <ChevronDown
-          size={18}
-          strokeWidth={1.5}
-          className="text-white/40 group-hover:text-phosphor transition-colors duration-300"
-        />
+        <ChevronDown size={18} strokeWidth={1.5} className="text-white/40 group-hover:text-phosphor transition-colors duration-300" />
       </button>
 
-      {/* ── Keyframes ──────────────────────────────────────────────────────── */}
       <style>{`
         @keyframes fadeInUp {
           from { opacity: 0; transform: translateY(22px); }
