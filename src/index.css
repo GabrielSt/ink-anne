@@ -37,6 +37,12 @@
 }
 
 html {
+  /* Default to instant scrolling so route changes never animate.
+     Opt into smooth scrolling per-element with the .smooth-scroll utility. */
+  scroll-behavior: auto;
+}
+
+.smooth-scroll {
   scroll-behavior: smooth;
 }
 
