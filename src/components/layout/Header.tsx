@@ -85,7 +85,11 @@ export default function Header() {
           </nav>
 
           {/* ── Logo ── */}
-          <Link to="/" aria-label="Ink Anne — Home">
+          <Link
+            to="/"
+            aria-label="Ink Anne — Home"
+            onClick={() => window.scrollTo(0, 0)}
+          >
             <img
               src={logo}
               alt="Anne Nogueira"
