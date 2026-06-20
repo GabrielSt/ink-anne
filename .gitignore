@@ -16,6 +16,11 @@ dist-ssr
 .agents
 .impeccable
 
+# Claude Code memory and local artifacts
+.claude/
+tsconfig.tsbuildinfo
+src/assets/hero-video2.mov
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
