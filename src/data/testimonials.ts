@@ -6,6 +6,8 @@ export interface Testimonial {
   style: string
 }
 
+// PLACEHOLDER — these quotes are invented. Replace with real client reviews (with permission)
+// before launch, or empty the array: the section hides itself when there are none.
 export const testimonials: Testimonial[] = [
   {
     id: 't-001',

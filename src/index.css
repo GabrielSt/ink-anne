@@ -8,33 +8,28 @@
   font-display: swap;
 }
 
+/* Tokens — see DESIGN.md §2. Black, white and one green. Nothing else. */
 @theme {
-  /* Backgrounds */
-  --color-void: #080a09;
-  --color-abyss: #0d0f0e;
-  --color-shadow-surface: #141815;
-  --color-surface: #1c211d;
-  --color-border: #252c26;
-  --color-border-subtle: #1e2420;
+  /* Black (backgrounds) */
+  --color-ink: #0b0c0b;
+  --color-ink-2: #121412;
+  --color-ink-3: #1a1d1a;
+  --color-line: #262a26;
 
-  /* Green spectrum */
-  --color-venom: #1a3828;
-  --color-moss: #2d5a3d;
-  --color-fern: #3d7a52;
-  --color-phosphor: #4e9e68;
-  --color-glow: #6dbf88;
-  --color-mist: #a8d5b5;
+  /* White (text, line art, sticker outline) */
+  --color-paper: #f2f2ec;
+  --color-paper-dim: #b4b8b0;
+  --color-paper-mute: #7c8278;
 
-  /* Text */
-  --color-ink-primary: #e8ede9;
-  --color-ink-secondary: #9aa89b;
-  --color-ink-tertiary: #5c6b5e;
-  --color-ink-accent: #6dbf88;
+  /* Green — Anne's pick */
+  --color-green: #9bd67e;
+  --color-green-light: #b7e5a0;
+  --color-green-deep: #3f6b2e;
 
-  /* Fonts */
-  --font-display: "Playfair Display", Georgia, serif;
-  --font-body: "Inter", system-ui, sans-serif;
-  --font-label: "Space Grotesk", system-ui, sans-serif;
+  /* Texturina for titles (echoes the logo lettering), Quicksand for everything else */
+  --font-sans: "Quicksand", ui-rounded, system-ui, sans-serif;
+  --font-display: "Texturina", Georgia, serif;
+  --font-pokemon: "Pocket Monk", "Quicksand", sans-serif;
 }
 
 /* ── Base reset ─────────────────────────────── */
@@ -55,15 +50,21 @@ html {
 }
 
 body {
-  background-color: #080a09;
-  color: #e8ede9;
-  font-family: "Inter", system-ui, sans-serif;
+  background-color: var(--color-ink);
+  color: var(--color-paper);
+  font-family: var(--font-sans);
+  font-weight: 500;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
 
-/* ── Grain overlay ──────────────────────────── */
+::selection {
+  background: var(--color-green);
+  color: var(--color-ink);
+}
+
+/* ── Grain overlay (echoes the stipple in the logo) ── */
 body::after {
   content: "";
   position: fixed;
@@ -74,6 +75,21 @@ body::after {
   mix-blend-mode: overlay;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
   background-size: 200px 200px;
+}
+
+/* ── Sticker ────────────────────────────────────
+   Die-cut look from the logo sticker and the chibi patches in
+   Anne's work: thick white contour, slight tilt, straightens on hover. */
+.sticker {
+  border: 6px solid var(--color-paper);
+  border-radius: 18px;
+  overflow: hidden;
+  transform: rotate(var(--tilt, 0deg));
+  transition: transform 250ms ease;
+}
+
+.sticker:hover {
+  transform: rotate(0deg) scale(1.02);
 }
 
 /* ── Scroll arrow animation ─────────────────── */

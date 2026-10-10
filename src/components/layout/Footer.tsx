@@ -17,7 +17,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-void border-t border-border">
+    <footer className="bg-ink border-t border-line">
       <div className="max-w-7xl mx-auto px-6 lg:px-16 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
           {/* Brand */}
@@ -25,26 +25,26 @@ export default function Footer() {
             <Link to="/" aria-label="Ink Anne — Home">
               <img src={logo} alt="Anne Nogueira" className="h-8 w-auto object-contain" />
             </Link>
-            <p className="font-body font-light text-ink-tertiary text-sm leading-relaxed">
+            <p className=" text-paper-mute text-sm leading-relaxed">
               {t("footer.tagline")}
             </p>
-            <div className="flex items-center gap-2 text-ink-tertiary">
+            <div className="flex items-center gap-2 text-paper-mute">
               <MapPin size={13} strokeWidth={1.5} />
-              <span className="font-label text-xs tracking-[0.15em]">{t("footer.studioLine")}</span>
+              <span className="text-sm">{t("footer.studioLine")}</span>
             </div>
           </div>
 
           {/* Navigation */}
           <div>
-            <p className="font-label font-medium text-[10px] tracking-[0.25em] uppercase text-ink-tertiary mb-5">
-              Páginas
+            <p className="font-semibold text-sm text-paper-mute mb-5">
+              {t("footer.pages")}
             </p>
             <nav className="flex flex-col gap-3">
               {links.map((link) => (
                 <Link
                   key={link.to}
                   to={link.to}
-                  className="font-label font-medium text-xs tracking-[0.15em] uppercase text-ink-secondary hover:text-phosphor transition-colors duration-200 w-fit"
+                  className="font-semibold text-paper-dim hover:text-green transition-colors duration-200 w-fit"
                 >
                   {link.label}
                 </Link>
@@ -54,7 +54,7 @@ export default function Footer() {
 
           {/* Social */}
           <div>
-            <p className="font-label font-medium text-[10px] tracking-[0.25em] uppercase text-ink-tertiary mb-5">
+            <p className="font-semibold text-sm text-paper-mute mb-5">
               Instagram
             </p>
             <a
@@ -63,11 +63,11 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 group"
             >
-              <span className="font-label font-medium text-sm tracking-widest text-phosphor group-hover:text-glow transition-colors duration-300">
+              <span className="font-semibold text-green group-hover:text-green-light transition-colors duration-300">
                 @ink.anne
               </span>
               <span
-                className="text-phosphor group-hover:text-glow group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300 text-sm"
+                className="text-green group-hover:text-green-light group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300 text-sm"
                 aria-hidden
               >
                 ↗
@@ -77,13 +77,13 @@ export default function Footer() {
         </div>
 
         {/* Bottom rule */}
-        <div className="w-full h-px bg-border mb-8" />
+        <div className="w-full h-px bg-line mb-8" />
 
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="font-label text-[11px] tracking-[0.15em] text-ink-tertiary">
+          <p className="text-xs text-paper-mute">
             © {new Date().getFullYear()} Anne Nogueira. {t("footer.rights")}.
           </p>
-          <p className="font-label text-[11px] tracking-[0.12em] text-ink-tertiary">
+          <p className="text-xs text-paper-mute">
             Porto, Portugal
           </p>
         </div>

@@ -20,7 +20,7 @@ export default function PokemonCard({
 
   return (
     <div
-      className="relative flex flex-col items-center gap-3 transition-all duration-200 bg-abyss border-b border-border"
+      className="relative flex flex-col items-center gap-3 transition-all duration-200 bg-ink-2 border-b border-line"
       style={{
         padding: isTeaser ? "1.25rem" : "1.25rem",
         transitionDelay: animationDelay,
@@ -30,17 +30,17 @@ export default function PokemonCard({
       {!isAvailable && (
         <div
           aria-hidden
-          className="absolute top-3 right-3 w-14 h-14 rounded-full border-[3px] border-phosphor/40 flex items-center justify-center rotate-[-18deg] pointer-events-none select-none"
+          className="absolute top-3 right-3 w-14 h-14 rounded-full border-[3px] border-green/40 flex items-center justify-center rotate-[-18deg] pointer-events-none select-none"
           style={{ opacity: 0.75 }}
         >
-          <span className="font-label text-[7px] font-bold tracking-[0.12em] text-phosphor/60 uppercase text-center leading-tight">
+          <span className="text-[7px] font-bold tracking-[0.12em] text-green/60 uppercase text-center leading-tight">
             TATTOOED
           </span>
         </div>
       )}
 
       {/* Number */}
-      <span className="font-label text-[10px] tracking-[0.2em] text-ink-tertiary">
+      <span className="text-[10px] tracking-[0.2em] text-paper-mute">
         #{String(pk.number).padStart(3, "0")}
       </span>
 
@@ -52,32 +52,32 @@ export default function PokemonCard({
         {pk.image ? (
           <img
             src={pk.image}
-            alt={`${pk.name} Pokémon tattoo by Anne Nogueira at SALL Studio Porto`}
+            alt={`${pk.name} Pokémon tattoo by Anne Nogueira in Porto`}
             loading="lazy"
             crossOrigin="anonymous"
             className="w-full h-full object-contain"
           />
         ) : (
-          <span className="font-label text-3xl select-none text-phosphor/20" aria-hidden>
+          <span className="text-3xl select-none text-green/20" aria-hidden>
             ?
           </span>
         )}
       </div>
 
       {/* Name */}
-      <span className="font-label text-xs font-medium text-ink-secondary text-center">
+      <span className="text-xs font-medium text-paper-dim text-center">
         {pk.name}
       </span>
 
       {/* Style — only on full grid */}
       {!isTeaser && (
-        <span className="font-label text-[10px] tracking-[0.12em] text-ink-tertiary text-center capitalize">
+        <span className="text-[10px] tracking-[0.12em] text-paper-mute text-center capitalize">
           {pk.tattooStyle}
         </span>
       )}
 
       {/* Status badge */}
-      <span className="w-full text-center font-label text-[9px] tracking-[0.15em] uppercase px-2 py-0.5 text-phosphor border border-phosphor/30 bg-phosphor/8">
+      <span className="w-full text-center text-[9px] tracking-[0.15em] uppercase px-2 py-0.5 text-green border border-green/30 bg-green/8">
         {isAvailable ? "Disponível" : "Feito"}
       </span>
 
@@ -85,7 +85,7 @@ export default function PokemonCard({
       {!isTeaser && onClick && (
         <button
           onClick={() => onClick(pk)}
-          className="w-full font-label font-medium text-[10px] tracking-[0.15em] uppercase py-2 border border-phosphor/30 text-phosphor hover:bg-phosphor hover:text-void transition-all duration-200"
+          className="w-full font-medium text-[10px] tracking-[0.15em] uppercase py-2 border border-green/30 text-green hover:bg-green hover:text-ink transition-all duration-200"
         >
           {isAvailable ? "Reclamar" : "Ver tatuagem"}
         </button>

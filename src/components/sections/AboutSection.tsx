@@ -7,23 +7,15 @@ export default function AboutSection() {
   const { t } = useTranslation();
 
   return (
-    <section className="relative bg-abyss overflow-hidden">
-      {/* ── Top border rule ─────────────────────────────────────────── */}
-      <div className="w-full h-px bg-border" />
-
+    <section className="relative bg-ink-2 overflow-hidden">
       <div className="relative max-w-7xl mx-auto px-6 lg:px-16 py-24 lg:py-32">
-        {/* ── Section eyebrow ─────────────────────────────────────────── */}
-        <p className="font-label font-medium text-xs tracking-[0.28em] uppercase text-phosphor mb-20 text-center">
-          {t("about.eyebrow")}
-        </p>
-
         {/* ── Two-column grid ─────────────────────────────────────────── */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-stretch">
           {/* ── Photo column ──────────────────────────────────────────── */}
           <div className="order-2 lg:order-1 min-h-[500px] lg:min-h-0">
             <img
               src={annePhoto}
-              alt="Anne Nogueira — Tattoo Artist at SALL Studio Porto"
+              alt="Anne Nogueira — Tattoo Artist in Porto"
               className="w-full h-full object-cover object-center"
               style={{ maxHeight: "680px" }}
             />
@@ -33,10 +25,10 @@ export default function AboutSection() {
           <div className="order-1 lg:order-2 flex flex-col justify-center">
             {/* Name display title */}
             <h2
-              className="font-display font-black text-white leading-none mb-10"
+              className="font-display font-semibold text-paper leading-none mb-10"
               style={{
-                fontSize: "clamp(2rem, 5vw, 6.5rem)",
-                letterSpacing: "0.12em",
+                fontSize: "clamp(2.5rem, 5vw, 4.5rem)",
+                letterSpacing: "-0.01em",
               }}
             >
               {t("about.title")}
@@ -44,22 +36,22 @@ export default function AboutSection() {
 
             {/* Bio paragraphs */}
             <div className="space-y-5 mb-10">
-              <p className="font-body font-light text-ink-secondary leading-[1.8] text-base lg:text-lg">
+              <p className=" text-paper-dim leading-[1.8] text-base lg:text-lg">
                 {t("about.bio1")}
               </p>
-              <p className="font-body font-light text-ink-secondary leading-[1.8] text-base lg:text-lg">
+              <p className=" text-paper-dim leading-[1.8] text-base lg:text-lg">
                 {t("about.bio2")}
               </p>
-              <p className="font-body font-light text-ink-secondary leading-[1.8] text-base lg:text-lg">
+              <p className=" text-paper-dim leading-[1.8] text-base lg:text-lg">
                 {t("about.bio3")}
               </p>
-              <p className="font-body font-light text-ink-secondary leading-[1.8] text-base lg:text-lg">
+              <p className=" text-paper-dim leading-[1.8] text-base lg:text-lg">
                 {t("about.bio4")}
               </p>
             </div>
 
             {/* Divider */}
-            <div className="w-12 h-px bg-fern mb-8" />
+            <div className="w-12 h-px bg-green-deep mb-8" />
 
             {/* Instagram link */}
             <a
@@ -68,11 +60,11 @@ export default function AboutSection() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 group"
             >
-              <span className="font-label font-medium text-sm tracking-widest text-phosphor group-hover:text-glow transition-colors duration-300">
+              <span className="font-semibold text-lg text-green group-hover:text-green-light transition-colors duration-300">
                 {t("about.handle")}
               </span>
               <span
-                className="text-phosphor group-hover:text-glow group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300 text-sm"
+                className="text-green group-hover:text-green-light group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300 text-sm"
                 aria-hidden
               >
                 ↗
@@ -81,9 +73,6 @@ export default function AboutSection() {
           </div>
         </div>
       </div>
-
-      {/* ── Bottom border rule ───────────────────────────────────────── */}
-      <div className="w-full h-px bg-border" />
     </section>
   );
 }

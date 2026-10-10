@@ -41,28 +41,28 @@ export default function Book() {
   };
 
   const inputClass =
-    "bg-abyss border border-border px-4 py-3.5 font-body text-sm text-ink-primary placeholder:text-ink-tertiary focus:outline-none focus:border-phosphor transition-colors duration-200";
+    "bg-ink-2 border border-line px-4 py-3.5 text-sm text-paper placeholder:text-paper-mute focus:outline-none focus:border-green transition-colors duration-200";
 
   const labelClass =
-    "font-label text-[11px] tracking-[0.2em] uppercase text-ink-tertiary";
+    "text-[11px] tracking-[0.2em] uppercase text-paper-mute";
 
   return (
     <>
       <Header />
 
-      <main className="min-h-screen bg-void pt-28 pb-0">
+      <main className="min-h-screen bg-ink pt-28 pb-0">
         {/* Hero */}
-        <div className="max-w-4xl mx-auto px-6 lg:px-16 py-16 lg:py-24 border-b border-border">
-          <p className="font-label font-medium text-xs tracking-[0.28em] uppercase text-phosphor mb-4">
+        <div className="max-w-4xl mx-auto px-6 lg:px-16 py-16 lg:py-24 border-b border-line">
+          <p className="font-medium text-xs tracking-[0.28em] uppercase text-green mb-4">
             {t("book.eyebrow")}
           </p>
           <h1
-            className="font-display font-black text-white mb-6"
+            className="font-bold text-white mb-6"
             style={{ fontSize: "clamp(2.5rem, 6vw, 5rem)", letterSpacing: "-0.02em" }}
           >
             {t("book.headline")}
           </h1>
-          <p className="font-body font-light text-ink-secondary leading-relaxed max-w-lg">
+          <p className=" text-paper-dim leading-relaxed max-w-lg">
             {t("book.desc")}
           </p>
         </div>
@@ -71,10 +71,10 @@ export default function Book() {
         <div className="max-w-2xl mx-auto px-6 lg:px-16 py-16 lg:py-24">
           {status === "success" ? (
             <div className="py-24 text-center">
-              <p className="font-display font-bold text-white text-2xl mb-4">
+              <p className="font-bold text-white text-2xl mb-4">
                 {t("book.form.success")}
               </p>
-              <p className="font-body font-light text-ink-tertiary">
+              <p className=" text-paper-mute">
                 {t("book.form.note")}
               </p>
             </div>
@@ -161,20 +161,20 @@ export default function Book() {
               </div>
 
               {status === "error" && (
-                <p className="font-body text-sm text-red-400">{t("book.form.error")}</p>
+                <p className="text-sm text-red-400">{t("book.form.error")}</p>
               )}
 
-              <div className="w-full h-px bg-border" />
+              <div className="w-full h-px bg-line" />
 
               <button
                 type="submit"
                 disabled={status === "sending"}
-                className="bg-phosphor text-void font-label font-medium text-xs tracking-[0.18em] uppercase py-4 hover:bg-glow transition-colors duration-200 disabled:opacity-50"
+                className="bg-green text-ink font-medium text-xs tracking-[0.18em] uppercase py-4 hover:bg-green-light transition-colors duration-200 disabled:opacity-50"
               >
                 {status === "sending" ? t("book.form.submitting") : t("book.form.submit")}
               </button>
 
-              <p className="font-body text-xs text-ink-tertiary text-center">
+              <p className="text-xs text-paper-mute text-center">
                 {t("book.form.note")}
               </p>
             </form>

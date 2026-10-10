@@ -6,83 +6,64 @@
     "wishlist": "Wishlist",
     "gift": "Gift Card",
     "book": "Book a Session",
+    "open": "Open menu",
     "close": "Close menu"
   },
   "hero": {
-    "eyebrow": "Tattoo Artist · Porto, Portugal",
-    "name": "Anne Nogueira",
-    "description": "Anime, illustrative colour & fine line tattoos.\nAt SALL Studio, Porto.",
-    "scroll": "Scroll"
+    "role": "Anime & Geek Tattoo Artist",
+    "location": "Porto, PT",
+    "scroll": "See more"
   },
   "about": {
-    "eyebrow": "About Me",
-    "title": "A N N E",
-    "bio1": "Hi, I'm Anne! I specialize in colorful tattoos — especially anime, original illustrations, and cartoons — but I also love a good blackwork piece.",
-    "bio2": "These styles captivate me not only because I personally connect with them, but also because they carry stories, emotional memories, and rich visual references full of feeling and identity.",
-    "bio3": "I'm deeply passionate about tattooing. I believe that making something permanent on the skin is a profound way of expressing ourselves, celebrating who we are, and embracing our bodies — this home that stays with us forever. I see tattooing as a powerful meeting point between art and self-esteem, between the linework and our true identity.",
+    "title": "Hi, I'm Anne",
+    "bio1": "I specialise in colour tattoos — especially anime, original illustrations and cartoons — but I also love a good blackwork piece.",
+    "bio2": "These styles captivate me not only because I personally identify with them, but because they carry stories, emotional memories and visual references full of feeling and identity.",
+    "bio3": "I have a deep passion for tattooing. I believe making something permanent on the skin is a profound way of expressing ourselves, celebrating who we are and embracing our bodies — this home that stays with us forever. I see tattooing as a powerful meeting point between art and self-esteem, between the line and our true identity.",
     "bio4": "Every project I create is made with love and careful attention to detail. Everything is designed especially for you 🤍",
     "instagram": "See more on Instagram",
     "handle": "@ink.anne"
   },
   "styles": {
-    "eyebrow": "Specialities",
-    "title": "The Style",
-    "anime": { "label": "Anime & Illustrative", "desc": "Characters and universes that mark your story" },
-    "color": { "label": "Colour & Realism", "desc": "Vivid palettes with depth and detail" },
-    "fineline": { "label": "Fine Line", "desc": "Delicate lines that last a lifetime" },
-    "blackwork": { "label": "Blackwork", "desc": "Contrast, form and impact. No compromises" },
-    "minimalist": { "label": "Minimalist", "desc": "Less is more — when every line counts" },
-    "floral": { "label": "Floral", "desc": "Nature transformed into permanent art" }
+    "statement": "I mostly tattoo <hl>anime</hl>, <hl>colour</hl> and <hl>blackwork</hl> — characters, original illustrations and cartoons that carry your story.",
+    "note": "Every piece is drawn from scratch for you. If your idea falls outside these styles, talk to me anyway."
   },
   "portfolio": {
-    "eyebrow": "Portfolio",
-    "title": "The Work",
+    "title": "My work",
     "follow": "Follow @ink.anne",
-    "viewAll": "View all work",
-    "empty": "Photos coming soon — follow on Instagram to see the full portfolio."
+    "viewAll": "See it all on Instagram",
+    "empty": "Photos coming soon — follow on Instagram to see the full work."
   },
   "flashTeaser": {
-    "eyebrow": "Flash Available",
-    "title": "Designs Ready to Tattoo",
-    "desc": "Unique pieces designed by me, available for immediate reservation at a special price. Each design is tattooed only once.",
-    "cta": "See all flash designs",
+    "title": "Flash",
+    "desc": "My own drawings, ready to tattoo. Each one is tattooed only once — then it leaves the sketchbook.",
+    "cta": "See all flash",
     "available": "Available",
     "taken": "Reserved"
   },
   "pokedexTeaser": {
-    "eyebrow": "Special Event",
-    "title": "Pokédex Tattoo",
-    "desc": "I'm tattooing every Pokémon — one by one. Pick yours and claim it before someone else does.",
-    "counter": "{{done}} tattooed · {{available}} available",
-    "cta": "Open Pokédex"
+    "desc": "I'm tattooing all 251 Pokémon from the first two generations, one by one. Pick yours before someone else does.",
+    "progress": "Pokémon tattooed so far",
+    "cta": "Open the Pokédex"
   },
   "wishlistTeaser": {
-    "eyebrow": "Wishlist",
-    "title": "Pieces I Want to Create",
-    "desc": "These are the characters and styles I'm dying to tattoo. Claim one at a special price.",
-    "cta": "View Wishlist",
-    "wishlistPrice": "Wishlist Price"
+    "title": "Dying to tattoo",
+    "desc": "Characters and ideas I've been wanting to make. If one of them is yours too, it comes at a special price.",
+    "cta": "See the full wishlist"
   },
   "testimonials": {
-    "eyebrow": "Testimonials",
-    "title": "What They Say"
-  },
-  "studio": {
-    "eyebrow": "Studio",
-    "title": "SALL Studio",
-    "location": "Porto, Portugal",
-    "desc": "I work at SALL Studio, a carefully curated space in the heart of Porto, designed for a comfortable, safe experience entirely focused on you."
+    "title": "From people who've been here"
   },
   "booking": {
-    "eyebrow": "Next Step",
-    "title": "Ready for your session?",
-    "desc": "Tell me your idea. I reply to every message personally.",
-    "cta": "Start Consultation",
-    "giftCta": "Give a Tattoo as Gift"
+    "title": "Tell me your idea.",
+    "desc": "I reply to every message personally.",
+    "place": "I tattoo in Porto, Portugal, in a fully equipped space ready to welcome you.",
+    "cta": "Book a session",
+    "giftCta": "Give a tattoo"
   },
   "footer": {
     "rights": "All rights reserved",
-    "studioLine": "SALL Studio · Porto, Portugal",
+    "studioLine": "Porto, Portugal",
+    "pages": "Pages",
     "tagline": "Permanent art, made with love."
   },
   "flash": {

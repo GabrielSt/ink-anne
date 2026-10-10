@@ -1,173 +1,85 @@
-import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useInView } from "../../hooks/useInView";
-import {
-  pokemonTakenCount,
-  pokemonAvailableCount,
-  pokemonDesigns,
-} from "../../data/pokemonDesigns";
-import PokemonCard from "../ui/PokemonCard";
-import bgPokemon from "../../assets/bg-pokemon.jpg";
-import pokedexImg from "../../assets/pokedex.png";
+import { pokemonTakenCount, pokemonDesigns } from "../../data/pokemonDesigns";
 
 const previewPokemon = pokemonDesigns.slice(0, 6);
+const total = pokemonDesigns.length;
 
+// The one full-green block on the page. Still-available Pokémon show as
+// "Who's that Pokémon?" silhouettes; tattooed ones show in full.
 export default function PokedexTeaserSection() {
   const { t } = useTranslation();
-  const { ref, inView } = useInView(0.05);
-  const sectionRef = useRef<HTMLElement>(null);
-  const [parallaxOffset, setParallaxOffset] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!sectionRef.current) return;
-      const rect = sectionRef.current.getBoundingClientRect();
-      const sectionMid = rect.top + rect.height / 2;
-      const viewportMid = window.innerHeight / 2;
-      setParallaxOffset((sectionMid - viewportMid) * 0.22);
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const { ref, inView } = useInView();
+  const progress = Math.max((pokemonTakenCount / total) * 100, 1);
 
   return (
-    <section
-      ref={sectionRef}
-      className="relative overflow-hidden"
-      style={{ backgroundColor: "#080a09" }}
-    >
-      {/* ── Parallax background ── */}
-      <img
-        src={bgPokemon}
-        alt=""
-        aria-hidden
-        className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none"
-        style={{
-          transform: `translateY(${parallaxOffset}px) scale(1.18)`,
-          filter: "saturate(0.7) brightness(0.28)",
-          objectPosition: "center 30%",
-        }}
-      />
-
-
-
-      <div className="w-full h-px" style={{ backgroundColor: "rgba(185,28,28,0.3)" }} />
-
-      {/* ── Pokédex device image — top right ── */}
-      <img
-        src={pokedexImg}
-        alt="Pokédex"
-        className="absolute top-8 right-8 lg:top-14 lg:right-14 pointer-events-none select-none"
-        style={{
-          height: "clamp(80px, 12vw, 160px)",
-          width: "auto",
-          objectFit: "contain",
-          opacity: 0.55,
-          filter: "drop-shadow(0 0 20px rgba(185,28,28,0.4))",
-          transform: "rotate(6deg)",
-        }}
-        aria-hidden
-      />
-
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-16 py-28 lg:py-36">
-        <div
-          ref={ref}
-          className={[
-            "transition-all duration-700 ease-out",
-            inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
-          ].join(" ")}
-        >
-          {/* ── Editorial asymmetric header ── */}
-          <div className="flex flex-col lg:flex-row items-start gap-10 lg:gap-20 mb-16">
-            {/* Left: huge display title */}
-            <div className="lg:w-1/2 lg:pl-4">
-              <h2
-                className="leading-[0.9] text-white block"
-                style={{
-                  fontSize: "clamp(2.5rem, 7vw, 5rem)",
-                  fontFamily: '"Pocket Monk", "Luckiest Guy", cursive',
-                  textShadow: "0 2px 40px rgba(0,0,0,0.5)",
-                  letterSpacing: "0.04em",
-                }}
-              >
-                Pokédex
-              </h2>
-              <h2
-                className="leading-[0.9] text-white block"
-                style={{
-                  fontSize: "clamp(2.5rem, 7vw, 5rem)",
-                  fontFamily: '"Pocket Monk", "Luckiest Guy", cursive',
-                  marginTop: "0.08em",
-                  textShadow: "0 2px 30px rgba(0,0,0,0.6)",
-                  letterSpacing: "0.04em",
-                }}
-              >
-                Tattoo
-              </h2>
-            </div>
-
-            {/* Right: badge + stats + desc + CTA */}
-            <div className="lg:w-1/2 lg:pt-12 flex flex-col justify-center">
-              <div
-                className="inline-flex items-center gap-2 mb-6 border px-3 py-1.5 self-start"
-                style={{ borderColor: "rgba(185,28,28,0.5)", backgroundColor: "rgba(185,28,28,0.12)" }}
-              >
-                <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#dc2626" }} />
-                <span
-                  className="text-[9px] leading-none"
-                  style={{
-                    color: "#f87171",
-                    fontFamily: '"Press Start 2P", monospace',
-                    letterSpacing: "0.18em",
-                  }}
-                >
-                  {t("pokedexTeaser.eyebrow")}
-                </span>
-              </div>
-              <p
-                className="font-label font-medium text-base mb-5"
-                style={{ color: "#facc15", letterSpacing: "0.2em" }}
-              >
-                {t("pokedexTeaser.counter", {
-                  done: pokemonTakenCount,
-                  available: pokemonAvailableCount,
-                })}
-              </p>
-
-              <p className="font-body font-light text-white/70 leading-relaxed mb-10 max-w-sm">
-                {t("pokedexTeaser.desc")}
-              </p>
-
-              <Link
-                to="/pokedex"
-                className="inline-flex items-center gap-3 self-start font-label font-medium text-xs tracking-[0.18em] uppercase px-8 py-3.5 transition-colors duration-200 group"
-                style={{ backgroundColor: "#cc2626", color: "#fff" }}
-                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.backgroundColor = "#dc2626"; }}
-                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.backgroundColor = "#cc2626"; }}
-              >
-                {t("pokedexTeaser.cta")}
-                <span className="group-hover:translate-x-0.5 transition-transform duration-200">→</span>
-              </Link>
-            </div>
+    <section className="bg-green text-ink">
+      <div
+        ref={ref}
+        className={[
+          "max-w-7xl mx-auto px-6 lg:px-16 py-24 lg:py-32 transition-all duration-700 ease-out",
+          inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
+        ].join(" ")}
+      >
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-end mb-16">
+          <div>
+            <h2
+              className="leading-[0.9]"
+              style={{ fontFamily: "var(--font-pokemon)", fontSize: "clamp(3.5rem, 10vw, 7.5rem)", letterSpacing: "0.02em" }}
+            >
+              Pokédex
+            </h2>
+            <p className="mt-6 text-lg leading-relaxed max-w-md text-ink/80">
+              {t("pokedexTeaser.desc")}
+            </p>
           </div>
 
-          {/* ── Preview grid — shared PokemonCard component ── */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-px bg-border">
-            {previewPokemon.map((pk, i) => (
-              <PokemonCard
-                key={pk.id}
-                pokemon={pk}
-                variant="teaser"
-                animationDelay={inView ? `${i * 55}ms` : "0ms"}
-              />
-            ))}
+          <div>
+            <p
+              className="font-display font-semibold leading-none tabular-nums"
+              style={{ fontSize: "clamp(3.5rem, 10vw, 7.5rem)", letterSpacing: "-0.01em" }}
+            >
+              {String(pokemonTakenCount).padStart(3, "0")}
+              <span className="text-ink/35">/{total}</span>
+            </p>
+            <p className="mt-3 text-ink/70">{t("pokedexTeaser.progress")}</p>
+            <div className="mt-5 h-2 rounded-full bg-ink/15 overflow-hidden">
+              <div className="h-full rounded-full bg-ink" style={{ width: `${progress}%` }} />
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className="w-full h-px" style={{ backgroundColor: "rgba(185,28,28,0.3)" }} />
+        <ul className="grid grid-cols-3 sm:grid-cols-6 gap-6 mb-16">
+          {previewPokemon.map((pk) => {
+            const isTaken = pk.status === "taken";
+            return (
+              <li key={pk.id} className="flex flex-col items-center gap-2">
+                {pk.image && (
+                  <img
+                    src={pk.image}
+                    alt={isTaken ? `${pk.name} Pokémon tattoo by Anne Nogueira, Porto` : ""}
+                    loading="lazy"
+                    className="w-full aspect-square object-contain"
+                    style={isTaken ? undefined : { filter: "brightness(0)", opacity: 0.85 }}
+                  />
+                )}
+                <span className="text-sm font-semibold tabular-nums text-ink/60">
+                  #{String(pk.number).padStart(3, "0")}
+                  {isTaken && <span className="text-ink"> · {pk.name}</span>}
+                </span>
+              </li>
+            );
+          })}
+        </ul>
+
+        <Link
+          to="/pokedex"
+          className="inline-flex items-center rounded-full bg-ink text-green font-semibold px-7 py-3 hover:bg-ink-3 transition-colors duration-200"
+        >
+          {t("pokedexTeaser.cta")}
+        </Link>
+      </div>
     </section>
   );
 }

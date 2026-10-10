@@ -8,7 +8,6 @@ import FlashTeaserSection from "../components/sections/FlashTeaserSection";
 import PokedexTeaserSection from "../components/sections/PokedexTeaserSection";
 import WishlistTeaserSection from "../components/sections/WishlistTeaserSection";
 import TestimonialsSection from "../components/sections/TestimonialsSection";
-import StudioSection from "../components/sections/StudioSection";
 import BookingCTASection from "../components/sections/BookingCTASection";
 import { useScrollToTop } from "../hooks/useScrollToTop";
 
@@ -26,7 +25,6 @@ export default function Home() {
         <PokedexTeaserSection />
         <WishlistTeaserSection />
         <TestimonialsSection />
-        <StudioSection />
         <BookingCTASection />
       </main>
       <Footer />

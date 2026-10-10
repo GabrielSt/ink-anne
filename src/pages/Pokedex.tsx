@@ -48,7 +48,7 @@ export default function Pokedex() {
 
       <main className="min-h-screen pt-28 pb-0" style={{ backgroundColor: "#080a09" }}>
         {/* Hero */}
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-16 py-16 lg:py-24 border-b border-phosphor/15 overflow-hidden">
+        <div className="relative max-w-7xl mx-auto px-6 lg:px-16 py-16 lg:py-24 border-b border-green/15 overflow-hidden">
           {/* Pokédex device — decorative top right */}
           <img
             src={pokedexImg}
@@ -65,9 +65,9 @@ export default function Pokedex() {
             }}
           />
           {/* Event badge */}
-          <div className="inline-flex items-center gap-2 border border-phosphor/40 bg-phosphor/8 px-3 py-1.5 mb-8">
-            <span className="w-1.5 h-1.5 rounded-full bg-phosphor animate-pulse" />
-            <span className="font-label text-[10px] font-medium tracking-[0.22em] uppercase text-phosphor">
+          <div className="inline-flex items-center gap-2 border border-green/40 bg-green/8 px-3 py-1.5 mb-8">
+            <span className="w-1.5 h-1.5 rounded-full bg-green animate-pulse" />
+            <span className="text-[10px] font-medium tracking-[0.22em] uppercase text-green">
               {t("pokedex.eyebrow")}
             </span>
           </div>
@@ -79,29 +79,29 @@ export default function Pokedex() {
             {t("pokedex.headline")}
           </h1>
 
-          <p className="font-label font-medium text-sm tracking-[0.2em] text-phosphor mb-6">
+          <p className="font-medium text-sm tracking-[0.2em] text-green mb-6">
             {t("pokedex.counter", {
               done: pokemonTakenCount,
               available: pokemonAvailableCount,
             })}
           </p>
 
-          <p className="font-body font-light text-ink-secondary leading-relaxed max-w-lg">
+          <p className=" text-paper-dim leading-relaxed max-w-lg">
             {t("pokedex.desc")}
           </p>
         </div>
 
         {/* Filter bar */}
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-16 py-6 flex flex-wrap items-center gap-3 border-b border-phosphor/15">
+        <div className="relative max-w-7xl mx-auto px-6 lg:px-16 py-6 flex flex-wrap items-center gap-3 border-b border-green/15">
           {filterButtons.map(({ key, label }) => (
             <button
               key={key}
               onClick={() => setFilter(key)}
               className={[
-                "font-label font-medium text-[11px] tracking-[0.18em] uppercase px-4 py-2 transition-all duration-200",
+                "font-medium text-[11px] tracking-[0.18em] uppercase px-4 py-2 transition-all duration-200",
                 filter === key
-                  ? "bg-phosphor text-void"
-                  : "border border-phosphor/20 text-ink-tertiary hover:text-phosphor hover:border-phosphor/50",
+                  ? "bg-green text-ink"
+                  : "border border-green/20 text-paper-mute hover:text-green hover:border-green/50",
               ].join(" ")}
             >
               {label}
@@ -111,7 +111,7 @@ export default function Pokedex() {
 
         {/* Grid */}
         <div className="relative max-w-7xl mx-auto px-6 lg:px-16 py-16">
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-px bg-border">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-px bg-line">
             {filtered.map((pk) => (
               <PokemonCard
                 key={pk.id}

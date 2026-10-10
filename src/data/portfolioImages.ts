@@ -36,7 +36,7 @@ export const portfolioImages: PortfolioImage[] = [
   {
     id: "obanai",
     src: obanai,
-    alt: "Obanai tattoo by Anne Nogueira at SALL Studio Porto",
+    alt: "Obanai tattoo by Anne Nogueira in Porto",
     label: "Obanai Iguro - Demon Slayer",
     style: "Anime / Color",
     postUrl: "https://www.instagram.com/p/DV9MXQpjbGK/",
@@ -44,7 +44,7 @@ export const portfolioImages: PortfolioImage[] = [
   {
     id: "sakura",
     src: sakura,
-    alt: "Sakura tattoo by Anne Nogueira at SALL Studio Porto",
+    alt: "Sakura tattoo by Anne Nogueira in Porto",
     label: "Sakura - Sakura Card Captors",
     style: "Anime / Color",
     postUrl: "https://www.instagram.com/p/DIMJYPAoYx5/?img_index=1",
@@ -52,7 +52,7 @@ export const portfolioImages: PortfolioImage[] = [
   {
     id: "no_face",
     src: no_face,
-    alt: "No Face from Spirited Away tattoo by Anne Nogueira at SALL Studio Porto",
+    alt: "No Face from Spirited Away tattoo by Anne Nogueira in Porto",
     label: "No Face & Chihiro - Spirited Away",
     style: "Anime / Color",
     postUrl: "https://www.instagram.com/p/C6WmjgAIZI7/",

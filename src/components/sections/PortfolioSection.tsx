@@ -39,17 +39,17 @@ function MockPhoto({ svg, label, index }: { svg: string; label: string; index: n
       href={INSTAGRAM_URL}
       target="_blank"
       rel="noopener noreferrer"
-      className="relative aspect-square overflow-hidden group bg-shadow-surface block"
+      className="relative aspect-square overflow-hidden group bg-ink-3 block"
       style={{ transitionDelay: `${index * 55}ms` }}
     >
       <img
         src={dataUri}
-        alt={`${label} tattoo illustration — Anne Nogueira SALL Studio Porto`}
+        alt={`${label} tattoo illustration — Anne Nogueira, Porto`}
         className="w-full h-full object-cover transition-all duration-600 group-hover:scale-105"
         loading="lazy"
       />
-      <div className="absolute inset-0 bg-void/0 group-hover:bg-void/40 transition-colors duration-400" />
-      <span className="absolute bottom-3 left-3 font-label text-[10px] tracking-widest uppercase text-white/0 group-hover:text-white/80 transition-colors duration-300">
+      <div className="absolute inset-0 bg-ink/0 group-hover:bg-ink/40 transition-colors duration-400" />
+      <span className="absolute bottom-3 left-3 text-[10px] tracking-widest uppercase text-white/0 group-hover:text-white/80 transition-colors duration-300">
         {label}
       </span>
     </a>
@@ -64,8 +64,7 @@ export default function PortfolioSection() {
   const displayImages = portfolioImages.slice(0, 6);
 
   return (
-    <section className="relative bg-abyss overflow-hidden">
-      <div className="w-full h-px bg-border" />
+    <section className="relative bg-ink-2 overflow-hidden">
 
       <div className="max-w-7xl mx-auto px-6 lg:px-16 py-24 lg:py-32">
         <div
@@ -78,12 +77,9 @@ export default function PortfolioSection() {
           {/* Header */}
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-14">
             <div>
-              <p className="font-label font-medium text-xs tracking-[0.28em] uppercase text-phosphor mb-4">
-                {t("portfolio.eyebrow")}
-              </p>
               <h2
-                className="font-display font-black text-white"
-                style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", letterSpacing: "-0.02em" }}
+                className="font-display font-semibold text-paper leading-none"
+                style={{ fontSize: "clamp(2.5rem, 6vw, 4.5rem)", letterSpacing: "-0.01em" }}
               >
                 {t("portfolio.title")}
               </h2>
@@ -95,10 +91,10 @@ export default function PortfolioSection() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 group shrink-0"
             >
-              <span className="font-label font-medium text-xs tracking-[0.18em] uppercase text-phosphor group-hover:text-glow transition-colors duration-300">
+              <span className="font-semibold text-green group-hover:text-green-light transition-colors duration-300">
                 {t("portfolio.follow")}
               </span>
-              <span className="text-phosphor group-hover:text-glow group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300 text-sm" aria-hidden>
+              <span className="text-green group-hover:text-green-light group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300 text-sm" aria-hidden>
                 ↗
               </span>
             </a>
@@ -122,8 +118,8 @@ export default function PortfolioSection() {
                       loading="lazy"
                       className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-void/0 group-hover:bg-void/30 transition-colors duration-300" />
-                    <span className="absolute bottom-0 left-0 right-0 px-3 py-2 font-label text-[10px] tracking-widest uppercase text-white/80 bg-void/60 sm:bg-transparent sm:text-white/0 sm:group-hover:text-white/80 sm:group-hover:bg-transparent transition-colors duration-300">
+                    <div className="absolute inset-0 bg-ink/0 group-hover:bg-ink/30 transition-colors duration-300" />
+                    <span className="absolute bottom-0 left-0 right-0 px-3 py-2 text-[10px] tracking-widest uppercase text-white/80 bg-ink/60 sm:bg-transparent sm:text-white/0 sm:group-hover:text-white/80 sm:group-hover:bg-transparent transition-colors duration-300">
                       {img.label}
                     </span>
                   </a>
@@ -135,7 +131,7 @@ export default function PortfolioSection() {
           </div>
 
           {!hasRealImages && (
-            <p className="font-body font-light text-ink-tertiary text-xs text-center mb-6 italic">
+            <p className=" text-paper-mute text-xs text-center mb-6 italic">
               {t("portfolio.empty")}
             </p>
           )}
@@ -146,7 +142,7 @@ export default function PortfolioSection() {
               href={INSTAGRAM_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 border border-border px-8 py-3 font-label font-medium text-xs tracking-[0.18em] uppercase text-ink-secondary hover:text-ink-primary hover:border-ink-secondary transition-all duration-300 group"
+              className="inline-flex items-center gap-2 rounded-full border-2 border-paper/30 text-paper font-semibold px-7 py-3 hover:border-paper transition-colors duration-200 group"
             >
               {t("portfolio.viewAll")}
               <span className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200">↗</span>
@@ -154,8 +150,6 @@ export default function PortfolioSection() {
           </div>
         </div>
       </div>
-
-      <div className="w-full h-px bg-border" />
     </section>
   );
 }
